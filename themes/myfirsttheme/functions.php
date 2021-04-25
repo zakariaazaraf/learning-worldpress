@@ -61,13 +61,17 @@
 
      add_action( 'init', 'custom_register_menu' );
 
-     // INSERT THE NAV MENU, WHICH INCLUDE MY PAGES
-     //wp_nav_menu( );
+     
+     function zakaria_wrapper_bootstrap_menu(){
+         // INSERT THE NAV MENU, WHICH INCLUDE MY PAGES
+         //wp_nav_menu( );
+    
+         // CHOOSE WHICH MENU TO DISPLAY, OR INCLUDE TWO FUNTIONS IF YOU WANT TOW MENUS 
+         wp_nav_menu( array(
+             // VISIT THE DOC TO SEE OTHER USFULL PROPERTIES YOU MIGHT NEED THEM
+            'theme_location' => 'header-menu',
+            'menu_class' => 'menu-selector-by-me' // ADD THIS CLASS NAME TO THE MENU
+         ) );
 
-     // CHOOSE WHICH MENU TO DISPLAY, OR INCLUDE TWO FUNTIONS IF YOU WANT TOW MENUS 
-     wp_nav_menu( array(
-         // VISIT THE DOC TO SEE OTHER USFULL PROPERTIES YOU MIGHT NEED THEM
-        'theme_location' => 'footer-menu',
-        'menu_class' => 'menu-selector-by-me' // ADD THIS CLASS NAME TO THE MENU
-     ) );
+     }
      
