@@ -12,3 +12,7 @@
   background-color: #000;
   color: #fff;
 }
+
+nav ul > li {
+  padding: 0.5rem 0.8rem;
+}

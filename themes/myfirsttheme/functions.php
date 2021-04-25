@@ -1,5 +1,15 @@
 <?php
 
+    /**
+     * Register Custom Navigation Walker
+     */
+    function register_navwalker(){
+        require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
+    }
+    add_action( 'after_setup_theme', 'register_navwalker' );
+
+    
+
     /*
     ** add the style file
     ** added by zakaria azaraf
@@ -70,7 +80,10 @@
          wp_nav_menu( array(
              // VISIT THE DOC TO SEE OTHER USFULL PROPERTIES YOU MIGHT NEED THEM
             'theme_location' => 'header-menu',
-            'menu_class' => 'menu-selector-by-me' // ADD THIS CLASS NAME TO THE MENU
+            'menu_class' => 'navbar-nav', // ADD THIS CLASS NAME TO THE MENU
+            'container' => false, // remove the default div that contain the ul
+            'depth' => 2,
+            'walker' => new WP_Bootstrap_Navwalker()
          ) );
 
      }
