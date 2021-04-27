@@ -20,74 +20,52 @@
         <section class="posts mt-4">
             <div class="container">
                 <div class="row">
-                    <div class="post col-sm-8 col-md-6 my-2">
-                        <h3 class="post-title ">post title test</h3>
-                        <div class="post-info s-flex">
-                            <span class="post-author"><i class='fa fa-user'></i>zakaria ben flann</span>
-                            <span class="post-date ml-2"><i class='fa fa-calendar'></i>2021/04/24</span>
-                            <span class="post-comments ml-2"><i class='fa fa-comments'></i>20 comments</span>
-                        </div>
-                        <div class="img-container">
-                            <img src="http://placehold.it/600x300/300" alt="post image">
-                        </div>
-                        <div class="post-body">
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim aspernatur quod optio est iste, eos voluptatum velit odit quos provident saepe architecto culpa dolor blanditiis rerum tempore obcaecati excepturi ipsa!
-                        </div>
-                        <p class="post-categories">
-                             <i class="fa fa-tag"></i> html, css, js
-                        </p>
-                    </div>
-                    <div class="post col-sm-8 col-md-6 my-2">
-                        <h3 class="post-title ">post title test</h3>
-                        <div class="post-info s-flex">
-                            <span class="post-author"><i class='fa fa-user'></i>zakaria ben flann</span>
-                            <span class="post-date ml-2"><i class='fa fa-calendar'></i>2021/04/24</span>
-                            <span class="post-comments ml-2"><i class='fa fa-comments'></i>20 comments</span>
-                        </div>
-                        <div class="img-container">
-                            <img src="http://placehold.it/600x300/300" alt="post image">
-                        </div>
-                        <div class="post-body">
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim aspernatur quod optio est iste, eos voluptatum velit odit quos provident saepe architecto culpa dolor blanditiis rerum tempore obcaecati excepturi ipsa!
-                        </div>
-                        <p class="post-categories">
-                             <i class="fa fa-tag"></i> html, css, js
-                        </p>
-                    </div>
-                    <div class="post col-sm-8 col-md-6 my-2">
-                        <h3 class="post-title ">post title test</h3>
-                        <div class="post-info s-flex">
-                            <span class="post-author"><i class='fa fa-user'></i>zakaria ben flann</span>
-                            <span class="post-date ml-2"><i class='fa fa-calendar'></i>2021/04/24</span>
-                            <span class="post-comments ml-2"><i class='fa fa-comments'></i>20 comments</span>
-                        </div>
-                        <div class="img-container">
-                            <img src="http://placehold.it/600x300/300" alt="post image">
-                        </div>
-                        <div class="post-body">
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim aspernatur quod optio est iste, eos voluptatum velit odit quos provident saepe architecto culpa dolor blanditiis rerum tempore obcaecati excepturi ipsa!
-                        </div>
-                        <p class="post-categories">
-                             <i class="fa fa-tag"></i> html, css, js
-                        </p>
-                    </div>
-                    <div class="post col-sm-8 col-md-6 my-2">
-                        <h3 class="post-title ">post title test</h3>
-                        <div class="post-info s-flex">
-                            <span class="post-author"><i class='fa fa-user'></i>zakaria ben flann</span>
-                            <span class="post-date ml-2"><i class='fa fa-calendar'></i>2021/04/24</span>
-                            <span class="post-comments ml-2"><i class='fa fa-comments'></i>20 comments</span>
-                        </div>
-                        <div class="img-container">
-                            <img src="http://placehold.it/600x300/300" alt="post image">
-                        </div>
-                        <div class="post-body">
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim aspernatur quod optio est iste, eos voluptatum velit odit quos provident saepe architecto culpa dolor blanditiis rerum tempore obcaecati excepturi ipsa!
-                        </div>
-                        <p class="post-categories">
-                             <i class="fa fa-tag"></i> html, css, js
-                        </p>
-                    </div>
+
+                    <?php 
+                        $args = array(
+                            'post_type' => 'post'
+                        );
+
+                        $post_query = new WP_Query($args);
+            
+                        // LOOP THROUGH THE POSTS
+                        if( $post_query->have_posts() ){
+                            while( $post_query->have_posts() ){
+                                $post_query->the_post(  );
+                                
+                                ?>  
+                                    <div class="post col-sm-8 col-md-6 my-2">
+                                        <?php /* the_title( "<h3 class='post-title'>", "</h3>") */ ?>
+                                        <h3 class='post-title'>
+                                            <a href="<?php the_permalink(); ?>" title='<?php the_title(); ?>'>
+                                                <?php the_title(); ?>
+                                            </a>
+                                        </h3>
+                                        <div class="post-info s-flex">
+                                            <span class="post-author"><i class='fa fa-user'></i><?php the_author_posts_link(); /* the_author() */ ?></span>
+                                            <span class="post-date ml-2"><i class='fa fa-calendar'></i><?php the_date( ); ?></span>
+                                            <span class="post-comments ml-2">
+                                                <i class='fa fa-comments'></i>
+                                                <?php comments_popup_link( 'no comments', '1 comment', '% comments', 'comment-link', 'comments disabled' ); ?>
+                                            </span>
+                                        </div>
+                                        <div class="img-container">
+                                            <!-- <img src="http://placehold.it/600x300/300" alt="post image"> -->
+                                            <?php the_post_thumbnail( 'large', array('class' => 'img-reponsive' ) ); ?>
+                                        </div>
+                                        <div class="post-body">
+                                            <?php the_content('Read more');?>
+                                        </div>
+                                        <p class="post-categories">
+                                            <i class="fa fa-tag"></i> <?php the_category(', '); ?>
+                                        </p>
+                                        
+                                    </div> 
+                                <?php
+
+                            }
+                        }
+                    ?>
                     
                 </div>
             </div>

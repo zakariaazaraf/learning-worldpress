@@ -1,5 +1,8 @@
 <?php
 
+    // ADD FEATURE IMAGE SUPPORT
+    add_theme_support( 'post-thumbnails');
+
     /**
      * Register Custom Navigation Walker
      */
