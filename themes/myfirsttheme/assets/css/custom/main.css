@@ -4,6 +4,10 @@
   padding: 0;
 }
 
+img {
+  width: 100%;
+}
+
 .copyright-footer {
   position: fixed;
   bottom: 0;
@@ -12,7 +16,21 @@
   background-color: #000;
   color: #fff;
 }
+.posts .post > * {
+  margin: 0.8rem 0;
+}
+.posts .post-title {
+  text-transform: capitalize;
+  font-size: 1.8rem;
+}
 
-nav ul > li {
-  padding: 0.5rem 0.8rem;
+.posts .post .post-body {
+  color: #555;
+  line-height: 1.7;
+  font-size: 1.175rem;
+}
+
+.post i {
+  margin-right: 0.3rem;
+  color: #999;
 }
