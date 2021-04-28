@@ -4,7 +4,7 @@
 
         <!-- BOOTSTRAP NAVBAR -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <a class="navbar-brand" href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -23,7 +23,9 @@
 
                     <?php 
                         $args = array(
-                            'post_type' => 'post'
+                            'posts_per_page' => 2,
+                            'post_type' => 'post',
+                            'paged'          => get_query_var( 'paged' ),
                         );
 
                         $post_query = new WP_Query($args);
@@ -54,10 +56,17 @@
                                             <?php the_post_thumbnail( 'large', array('class' => 'img-reponsive' ) ); ?>
                                         </div>
                                         <div class="post-body">
-                                            <?php the_content('Read more');?>
+                                            <?php /* the_content('Read more'); */ ?>
+                                            <?php
+                                                // CONVERT THE POST CONTENT TO STRING { REMOVE HTML TAGS, H1, h5, IMG ... } AND RETURN THE FIRST 55 WORDS 
+                                                the_excerpt( );
+                                            ?>
                                         </div>
                                         <p class="post-categories">
                                             <i class="fa fa-tag"></i> <?php the_category(', '); ?>
+                                        </p>
+                                        <p class="post-tags">
+                                            <?php the_tags(); ?>
                                         </p>
                                         
                                     </div> 
@@ -68,6 +77,22 @@
                     ?>
                     
                 </div>
+                <?php
+                    // PAGNATION LINKS
+                    echo '<div class="d-flex justify-content-center">';
+                        if(get_preview_post_link(  )){
+                            previous_posts_link('<< Prev');
+                        }else{
+                            echo '  ';
+                        }
+
+                        if(get_next_post_link( ) ){
+                            next_posts_link( 'Next >>' );
+                        }else{
+                            echo '  ';
+                        }
+                    echo '</div>';
+                ?>
             </div>
         </section>
 
