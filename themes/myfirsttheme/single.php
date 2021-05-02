@@ -67,18 +67,24 @@
                     // PAGNATION LINKS
                     echo '<div class="d-flex justify-content-between">';
                         if( get_previous_post_link( ) ){
-                            previous_post_link( );
+                            /* 
+                                ADVANCE FEATURE, YOU COULD GET THE NEXT OR THE PREVIOUS POST
+                                THAT SHARE THE SAME TAGS, CATEGORIES BY SPECIFING THE OTHER PARAMS
+                            */
+                            previous_post_link( '%link', '<< %title' );
                             
                         }else{
                             echo '';
                         }
 
                         if(get_next_post_link( ) ){
-                            next_post_link(  );
+                            next_post_link( '%link', '%title >>' );
                         }else{
                             echo '';
                         }
                     echo '</div>';
+
+                    comments_template(  );
                 ?>
             </div>
         </section>

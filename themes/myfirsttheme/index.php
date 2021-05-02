@@ -84,16 +84,17 @@
                 </div>
                 <?php
                     // PAGNATION LINKS
-                    echo '<div class="d-flex justify-content-center">';
+                    echo '<div class="d-flex justify-content-between">';
                         if(get_previous_posts_link(  )){
-                            previous_posts_link('<< Prev');
+                            previous_posts_link("<< Prev");
                             
                         }else{
                             echo '  ';
                         }
 
                         if(get_next_posts_link( )  ){
-                            next_posts_link( 'Next >>' );
+                            next_posts_link( "Next >>" );
+                            
                         }else{
                             echo '  ';
                         }

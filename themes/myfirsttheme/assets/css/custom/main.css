@@ -42,3 +42,14 @@ header .navbar {
   margin-right: 0.3rem;
   color: #999;
 }
+
+.single-post ul,
+.single-post ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.single-post .comments-list img {
+  width: auto;
+}
