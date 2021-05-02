@@ -64,6 +64,7 @@
                                             <?php
                                                 // CONVERT THE POST CONTENT TO STRING { REMOVE HTML TAGS, H1, h5, IMG ... } AND RETURN THE FIRST 55 WORDS 
                                                 the_excerpt( );
+                                                
                                             ?>
                                         </div>
                                         <p class="post-categories">
@@ -84,13 +85,14 @@
                 <?php
                     // PAGNATION LINKS
                     echo '<div class="d-flex justify-content-center">';
-                        if(get_preview_post_link(  )){
+                        if(get_previous_posts_link(  )){
                             previous_posts_link('<< Prev');
+                            
                         }else{
                             echo '  ';
                         }
 
-                        if(get_next_post_link( ) ){
+                        if(get_next_posts_link( )  ){
                             next_posts_link( 'Next >>' );
                         }else{
                             echo '  ';

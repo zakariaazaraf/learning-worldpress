@@ -102,6 +102,7 @@
    
     function custom_excerpt_more($more){
         return ' ...';
+        
     }
         
         

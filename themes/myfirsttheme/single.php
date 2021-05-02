@@ -25,6 +25,10 @@
             <div class="container">
                 <div class="post">
                     <?php /* the_title( "<h3 class='post-title'>", "</h3>") */ ?>
+                    <?php 
+                        // EDIT THE POST
+                        edit_post_link( 'Edit Post <i class="fas fa-pencil-alt ml-1"></i>' ,'', '', 0, 'zikoClass'); 
+                    ?>
                     <h3 class='post-title'>
                         <a href="<?php the_permalink(); ?>" title='<?php the_title(); ?>'>
                             <?php the_title(); ?>
@@ -59,6 +63,23 @@
 
                     
                 </div>
+                <?php
+                    // PAGNATION LINKS
+                    echo '<div class="d-flex justify-content-between">';
+                        if( get_previous_post_link( ) ){
+                            previous_post_link( );
+                            
+                        }else{
+                            echo '';
+                        }
+
+                        if(get_next_post_link( ) ){
+                            next_post_link(  );
+                        }else{
+                            echo '';
+                        }
+                    echo '</div>';
+                ?>
             </div>
         </section>
 
