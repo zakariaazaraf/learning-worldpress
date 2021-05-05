@@ -10,8 +10,12 @@
         );
 
         // COMMENT NUMBER
-        echo "<h5>" . comments_number( '0 Comm', '1 Comm', '% Commns' ) . "</h5>";
-        
+        ?>
+
+        <h3><?php comments_number( '0 Comment', '1 Comment', '% Comments' ) ?> </h3>
+
+        <?php
+
         echo '<ul class="comments-list">';
             wp_list_comments( $comments_args );
         echo '</ul>';

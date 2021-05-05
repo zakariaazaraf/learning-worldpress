@@ -50,6 +50,21 @@ header .navbar {
   padding: 0;
 }
 
+.single-post .comments-list {
+  background-color: #bbb;
+  padding: 1.5rem 0.7rem;
+}
 .single-post .comments-list img {
   width: auto;
+}
+
+.single-post .comments-list .children {
+  padding: 0.7rem 1.5rem;
+}
+
+.single-post .comments-list .children {
+  background-color: #ccc;
+}
+.single-post .comments-list .children .children {
+  background-color: #eee;
 }
