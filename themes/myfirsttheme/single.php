@@ -84,7 +84,26 @@
                         }
                     echo '</div>';
 
+                    // COMMENT TEMPLATE
                     comments_template(  );
+
+                    // COMMENT FORM FOR INSERTING COMMENTS
+
+                        // comment form args, used to costumize the form fileds
+                        $comment_form_args = array(
+                            // those fields are for unloged in users
+                            'fields' => array(
+                                'author' => '',
+                                'email' => '',
+                                'url' => ''
+                            ),
+                            // probably you should specify the name of each input
+                            'comment_field' => '<div class="form-group"><label>Comm Text</label><textarea></textarea></div>'
+                        );
+
+                    comment_form(  );
+                    /* comment_form( $comment_form_args ); */
+
                 ?>
             </div>
         </section>

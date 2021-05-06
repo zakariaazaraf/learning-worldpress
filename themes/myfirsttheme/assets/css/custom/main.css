@@ -54,8 +54,21 @@ header .navbar {
   background-color: #bbb;
   padding: 1.5rem 0.7rem;
 }
+
 .single-post .comments-list img {
   width: auto;
+}
+
+.single-post .comment-respond form label {
+  display: block;
+}
+
+.single-post .comment-respond form .form-submit input[type="submit"] {
+  background-color: #495f47;
+  color: #fff;
+  padding: 0.6rem 1rem;
+  border: 1px solid #eee;
+  border-radius: 7px;
 }
 
 .single-post .comments-list .children {
