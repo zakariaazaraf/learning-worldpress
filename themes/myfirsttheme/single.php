@@ -24,44 +24,61 @@
         <section class="single-post mt-4">
             <div class="container">
                 <div class="post">
-                    <?php /* the_title( "<h3 class='post-title'>", "</h3>") */ ?>
-                    <?php 
-                        // EDIT THE POST
-                        edit_post_link( 'Edit Post <i class="fas fa-pencil-alt ml-1"></i>' ,'', '', 0, 'zikoClass'); 
+                    <?php   
+                        if(have_posts(  )):
+                            while(have_posts(  )):
+                                the_post();
                     ?>
-                    <h3 class='post-title'>
-                        <a href="<?php the_permalink(); ?>" title='<?php the_title(); ?>'>
-                            <?php the_title(); ?>
-                        </a>
-                    </h3>
-                    <div class="post-info s-flex">
-                        <span class="post-author"><i class='fa fa-user'></i><?php the_author_posts_link(); /* the_author() */ ?></span>
-                        <span class="post-date ml-2"><i class='fa fa-calendar'></i><?php the_date( ); ?></span>
-                        <span class="post-comments ml-2">
-                            <i class='fa fa-comments'></i>
-                            <?php comments_popup_link( 'no comments', '1 comment', '% comments', 'comment-link', 'comments disabled' ); ?>
-                        </span>
-                    </div>
-                    <div class="img-container">
-                        <!-- <img src="http://placehold.it/600x300/300" alt="post image"> -->
-                        <?php the_post_thumbnail( 'large', array('class' => 'img-auto' ) ); ?>
-                    </div>
-                    <div class="post-body">
-                        <?php the_content(); ?>
-                        <?php
-                            // CONVERT THE POST CONTENT TO STRING { REMOVE HTML TAGS, H1, h5, IMG ... } AND RETURN THE FIRST 55 WORDS 
-                            /* the_excerpt( ); */
-                        ?>
-                    </div>
-                    <p class="post-categories">
-                        <i class="fa fa-tag"></i> <?php the_category(', '); ?>
-                    </p>
-                    <p class="post-tags">
-                        <?php the_tags(); ?>
-                    </p>
-                                
+                                <?php /* the_title( "<h3 class='post-title'>", "</h3>") */ ?>
+                                <?php 
+                                    // EDIT THE POST
+                                    edit_post_link( 'Edit Post <i class="fas fa-pencil-alt ml-1"></i>' ,'', '', 0, 'zikoClass'); 
+                                ?>
+                                <h3 class='post-title'>
+                                    <a href="<?php the_permalink(); ?>" title='<?php the_title(); ?>'>
+                                        <?php the_title(); ?>
+                                    </a>
+                                </h3>
+                                <div class="post-info s-flex">
+                                    <span class="post-author"><i class='fa fa-user'></i><?php the_author_posts_link(); /* the_author() */ ?></span>
+                                    <span class="post-date ml-2"><i class='fa fa-calendar'></i><?php the_date( ); ?></span>
+                                    <span class="post-comments ml-2">
+                                        <i class='fa fa-comments'></i>
+                                        <?php comments_popup_link( 'no comments', '1 comment', '% comments', 'comment-link', 'comments disabled' ); ?>
+                                    </span>
+                                </div>
+                                <div class="img-container">
+                                    <!-- <img src="http://placehold.it/600x300/300" alt="post image"> -->
+                                    <?php the_post_thumbnail( 'large', array('class' => 'img-auto' ) ); ?>
+                                </div>
+                                <div class="post-body">
+                                    <?php the_content(); ?>
+                                    <?php
+                                        // CONVERT THE POST CONTENT TO STRING { REMOVE HTML TAGS, H1, h5, IMG ... } AND RETURN THE FIRST 55 WORDS 
+                                        /* the_excerpt( ); */
+                                    ?>
+                                </div>
+                                <p class="post-categories">
+                                    <i class="fa fa-tag"></i> <?php the_category(', '); ?>
+                                </p>
+                                <p class="post-tags">
+                                    <?php the_tags(); ?>
+                                </p>
 
-                    
+                                <h3>
+                                    THE AUTHOR INFO : 
+                                    <?php the_author_meta( 'first_name' ); ?>
+                                    <?php the_author_meta( 'last_name' ); ?>
+                                    (<?php the_author_meta( 'nickname' ); ?>)
+                                    
+                                    <!-- THE AUTHOR METADATA FUNCTIONS  -->
+                                
+                                </h3>   
+
+                    <?php
+                            endwhile;
+                        endif;
+                    ?>
                 </div>
                 <?php
                     // PAGNATION LINKS

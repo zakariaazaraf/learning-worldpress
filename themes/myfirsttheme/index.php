@@ -26,18 +26,18 @@
                 <div class="row">
 
                     <?php 
-                        $args = array(
+                        /* $args = array(
                             'posts_per_page' => 2,
                             'post_type' => 'post',
                             'paged'          => get_query_var( 'paged' ),
                         );
 
-                        $post_query = new WP_Query($args);
+                        $post_query = new WP_Query($args); */
             
                         // LOOP THROUGH THE POSTS
-                        if( $post_query->have_posts() ){
-                            while( $post_query->have_posts() ){
-                                $post_query->the_post(  );
+                        if( have_posts() ){
+                            while( have_posts() ){
+                                the_post(  );
                                 
                                 ?>  
                                     <div class="post col-sm-8 col-md-6 my-2">
