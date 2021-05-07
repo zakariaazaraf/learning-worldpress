@@ -81,3 +81,7 @@ header .navbar {
 .single-post .comments-list .children .children {
   background-color: #eee;
 }
+
+.img-avatar {
+  width: auto;
+}

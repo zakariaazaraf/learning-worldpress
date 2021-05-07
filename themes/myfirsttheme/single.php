@@ -65,15 +65,30 @@
                                     <?php the_tags(); ?>
                                 </p>
 
-                                <h3>
-                                    THE AUTHOR INFO : 
-                                    <?php the_author_meta( 'first_name' ); ?>
-                                    <?php the_author_meta( 'last_name' ); ?>
-                                    (<?php the_author_meta( 'nickname' ); ?>)
-                                    
-                                    <!-- THE AUTHOR METADATA FUNCTIONS  -->
-                                
-                                </h3>   
+                                <!-- THE AUTHOR METADATA FUNCTIONS  -->
+                                <div class="author-info d-flex align-items-end mb-2">
+                                    <?php
+                                        // GET THE AUTHOR AVATAR
+                                        $author_id = get_the_author_meta( 'ID' );
+
+                                        /* get_avatar( $id_or_email:mixed, $size:integer, $default:string, $alt:string, $args:array|null ) */
+                                        echo get_avatar($author_id, 64, '', 'author avatar', array('class' => 'img-avatar'));
+                                    ?>
+                                    <h4 class='m-0 ml-1 text-capitalize'>
+                                        <?php the_author_meta( 'first_name' ); ?>
+                                        <?php the_author_meta( 'last_name' ); ?>
+                                        (<?php the_author_meta( 'nickname' ); ?>)    
+                                    </h4>
+
+                                </div>
+                                <?php
+                                    // CHECK THE DESCRIPTION OF THE AUTHOR
+                                    if(get_the_author_meta( 'description' )){
+                                        ?> <p><?php the_author_meta( 'description' ) ?></p> <?php
+                                    }else{
+                                        ?> <p>There's no description for the post author</p> <?php
+                                    }
+                                ?>
 
                     <?php
                             endwhile;
