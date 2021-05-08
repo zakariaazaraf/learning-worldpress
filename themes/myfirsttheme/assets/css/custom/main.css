@@ -82,6 +82,12 @@ header .navbar {
   background-color: #eee;
 }
 
+.single-post .author-info p {
+  margin: 0;
+}
+
 .img-avatar {
   width: auto;
+  border-radius: 50%;
+  border: 2px solid #ddd;
 }

@@ -66,30 +66,53 @@
                                 </p>
 
                                 <!-- THE AUTHOR METADATA FUNCTIONS  -->
-                                <div class="author-info d-flex align-items-end mb-2">
+                                <div class="author-info d-flex mb-4 text-light bg-secondary rounded p-2">
                                     <?php
                                         // GET THE AUTHOR AVATAR
                                         $author_id = get_the_author_meta( 'ID' );
 
                                         /* get_avatar( $id_or_email:mixed, $size:integer, $default:string, $alt:string, $args:array|null ) */
-                                        echo get_avatar($author_id, 64, '', 'author avatar', array('class' => 'img-avatar'));
+                                        echo get_avatar($author_id, 64 * 2, '', 'author avatar', array('class' => 'img-avatar'));
                                     ?>
-                                    <h4 class='m-0 ml-1 text-capitalize'>
-                                        <?php the_author_meta( 'first_name' ); ?>
-                                        <?php the_author_meta( 'last_name' ); ?>
-                                        (<?php the_author_meta( 'nickname' ); ?>)    
-                                    </h4>
+                                    <div class='ml-4 d-flex flex-column justify-content-center'>
+                                        <h4 class='m-0 text-capitalize'>
+                                            <?php the_author_meta( 'first_name' ); ?>
+                                            <?php the_author_meta( 'last_name' ); ?>
+                                            (<?php the_author_meta( 'nickname' ); ?>)    
+                                        </h4>
+                                        <p class='lead font-weight-normal'>
+                                            <?php
+                                                // CHECK THE DESCRIPTION OF THE AUTHOR
+                                                if(get_the_author_meta( 'description' )){
+                                                    the_author_meta( 'description' );
+                                                }else{
+                                                    echo "There's no description for the post author";
+                                                }
+                                            ?>
+                                        </p>
+                                        <p>
+                                            author's posts :
+                                            <span class='font-weight-bold'>
+                                                <?php 
+                                                    // THE AUTHOR POST COUNT
+                                                    /* count_user_posts( $userid:integer, $post_type:array|string, $public_only:boolean ) */
+                                                    echo count_user_posts( $author_id ); 
+                                                ?>
+                                            </span>
+                                        </p>
+                                        <p>        
+                                            author profile : 
+                                            <span class='font-italic'>
+                                                <?php
+                                                    // AUTHOR PROFILE
+                                                    the_author_posts_link(  );
+                                                ?>
+                                            </span>
+                                        </p>
+                                    </div>
 
                                 </div>
-                                <?php
-                                    // CHECK THE DESCRIPTION OF THE AUTHOR
-                                    if(get_the_author_meta( 'description' )){
-                                        ?> <p><?php the_author_meta( 'description' ) ?></p> <?php
-                                    }else{
-                                        ?> <p>There's no description for the post author</p> <?php
-                                    }
-                                ?>
-
+                                
                     <?php
                             endwhile;
                         endif;

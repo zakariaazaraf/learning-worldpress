@@ -15,10 +15,13 @@
         <h3><?php comments_number( '0 Comment', '1 Comment', '% Comments' ) ?> </h3>
 
         <?php
+        
 
         echo '<ul class="comments-list">';
             wp_list_comments( $comments_args );
         echo '</ul>';
+        
+
         /* foreach( $comments as $comment){
             comment_text(  );
             comment_author(  );
