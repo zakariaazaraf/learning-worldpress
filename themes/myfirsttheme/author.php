@@ -24,20 +24,31 @@
         <!-- END THE AUTHOR INFORMATION ROW -->
 
         <!-- START THE AUTHOR INFORMATION ROW -->
-        <div class="row author-posts">
             <?php
+
+                /* AUTHOR POSTS WITH WP QUERY */
+                $query_args = array(
+                    'author' => $author_id,
+                    'posts_per_page' => 3 /* -1 => means all author posts */
+                );
+                $author_posts = new WP_Query($query_args);
+
                 // SHOW AUTHOR POSTS
-                if(have_posts(  )):
-                    while(have_posts(  )):
-                        the_post();
+                if($author_posts->have_posts(  )):
+                    ?>
+                    <h2 class='text-capitalize py-2'><?php the_author_meta('first_name'); ?>'s posts</h2>
+                    <div class="row author-posts">
+                    <?php
+                    while($author_posts->have_posts(  )):
+                        $author_posts->the_post();
             ?>      
                         <!-- START POSTS -->
-                        <div class="col-md-6">
-                            <div class="px-1">
+                        <div class="col-md-6 col-lg-4 py-sm-2 py-0">
+                            <div class="px-1 text-center">
                                 <div class="img-container">
                                     <!-- <img src="http://placehold.it/600x300/300" alt="post image"> -->
                                     <a href="<?php the_permalink(); ?>" title='<?php the_title(); ?>'>
-                                        <?php the_post_thumbnail( 'large', array('class' => 'img-auto' ) ); ?>
+                                        <?php the_post_thumbnail( 'large', array('class' => '' ) ); ?>
                                     </a>
                                 </div>
                                 <h3 class='post-title'>
@@ -48,22 +59,21 @@
                                     <?php
                                         // CONVERT THE POST CONTENT TO STRING { REMOVE HTML TAGS, H1, h5, IMG ... } AND RETURN THE FIRST 55 WORDS 
                                         the_excerpt( );
+                                        /* wp_trim_words( $text:string, $num_words:integer, $more:string|null ) */
+                                        /* echo wp_trim_words( "the_excerpt( )", 25 , 'Read more'); */
                                     ?>
                                 </div>
-                                <p class="post-categories">
-                                    <i class="fa fa-tag"></i> <?php the_category(', '); ?>
-                                </p>
-                                <p class="post-tags">
-                                    <?php the_tags(); ?>
-                                </p>
+                                
                             </div>
                         </div>
                         <!-- END POSTS -->
             <?php
                     endwhile;
+                    echo '</div>';
+                    // destroy the previous query and setup a new one
+                    wp_reset_query(  );
                 endif;
             ?>
-        </div>
         <!-- END THE AUTHOR INFORMATION ROW -->
         <!-- START AUTHOR STATISTICS -->
         <div class="row author-stats">
