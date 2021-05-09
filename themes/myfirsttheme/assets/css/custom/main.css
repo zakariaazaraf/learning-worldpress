@@ -89,5 +89,23 @@ header .navbar {
 .img-avatar {
   width: auto;
   border-radius: 50%;
-  border: 2px solid #ddd;
+  border: 2px solid rgb(131, 131, 131);
+}
+
+/* AUTHOR PROFILE PAGE */
+.author-profile .author-name {
+  font-size: 7rem;
+  word-wrap: break-word;
+  text-transform: capitalize;
+  color: #000;
+}
+
+.author-profile .description {
+  font-size: 1.3rem;
+}
+
+.author-stats > div {
+  text-align: center;
+  font-size: 5rem;
+  font-weight: bold;
 }

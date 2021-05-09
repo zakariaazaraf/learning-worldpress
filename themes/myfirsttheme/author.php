@@ -1,4 +1,93 @@
-<?php
+<?php get_header( ); ?>
+    <div class="container">
+        <!-- START THE AUTHOR INFORMATION ROW -->
+        <div class="row author-profile py-5 align-items-center justify-content-center">
+            <div class="col-md-8 text-center text-md-left">
+                <h1 class='author-name'>
+                    <?php the_author_meta( 'first_name' ); ?>
+                    <?php the_author_meta( 'last_name' ); ?>
+                </h1>
+                <p class="description">
+                    <?php the_author_meta('description'); ?>
+                </p>
+            </div>
+            <div class="col-md-4 text-center text-lg-right">
+                <?php
+                    // GET THE AUTHOR AVATAR
+                    $author_id = get_the_author_meta( 'ID' );
 
-    // THE AUTHOR PAGE
-    echo 'Hello author :)';
+                    /* get_avatar( $id_or_email:mixed, $size:integer, $default:string, $alt:string, $args:array|null ) */
+                    echo get_avatar($author_id, 64 * 4, '', 'author avatar', array('class' => 'img-avatar'));
+                ?>
+            </div>
+        </div>
+        <!-- END THE AUTHOR INFORMATION ROW -->
+
+        <!-- START THE AUTHOR INFORMATION ROW -->
+        <div class="row author-posts">
+            <?php
+                // SHOW AUTHOR POSTS
+                if(have_posts(  )):
+                    while(have_posts(  )):
+                        the_post();
+            ?>      
+                        <!-- START POSTS -->
+                        <div class="col-md-6">
+                            <div class="px-1">
+                                <div class="img-container">
+                                    <!-- <img src="http://placehold.it/600x300/300" alt="post image"> -->
+                                    <a href="<?php the_permalink(); ?>" title='<?php the_title(); ?>'>
+                                        <?php the_post_thumbnail( 'large', array('class' => 'img-auto' ) ); ?>
+                                    </a>
+                                </div>
+                                <h3 class='post-title'>
+                                    <?php the_title(); ?>
+                                </h3>
+                                <div class="post-body">
+                                    <?php /* the_content(); */ ?>
+                                    <?php
+                                        // CONVERT THE POST CONTENT TO STRING { REMOVE HTML TAGS, H1, h5, IMG ... } AND RETURN THE FIRST 55 WORDS 
+                                        the_excerpt( );
+                                    ?>
+                                </div>
+                                <p class="post-categories">
+                                    <i class="fa fa-tag"></i> <?php the_category(', '); ?>
+                                </p>
+                                <p class="post-tags">
+                                    <?php the_tags(); ?>
+                                </p>
+                            </div>
+                        </div>
+                        <!-- END POSTS -->
+            <?php
+                    endwhile;
+                endif;
+            ?>
+        </div>
+        <!-- END THE AUTHOR INFORMATION ROW -->
+        <!-- START AUTHOR STATISTICS -->
+        <div class="row author-stats">
+            <div class="col-4">
+                <i class="fa fa-podcast" aria-hidden="true"></i>
+                <span class='font-weight-bold'><?php echo count_user_posts( $author_id ); ?></span>
+            </div>
+            <div class="col-4">
+                <i class="fa fa-comments" aria-hidden="true"></i>
+                <span class='font-weight-bold'>
+                    <?php
+                        /* AUTHOR COMMENTS */
+                        /* get_comments( $args:string|array ) */
+                        $comments_args = array(
+                            'user_id' => $author_id,
+                            'count' => true // user comments on the site
+                        );
+                        echo get_comments($comments_args);
+                    ?>
+                </span>
+            </div>
+            <div class="col-4"><span></span></div>
+            <div class="col-4"><span></span></div>
+        </div>
+        <!-- END AUTHOR STATISTICS -->
+    </div>    
+<?php get_footer( ); ?>
