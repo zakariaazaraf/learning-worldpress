@@ -99,9 +99,9 @@
     function custom_excerpt_length($length){
         // check if the author's page
         if(is_author(  )){
-            return 15;
+            return 20;
         }
-        return 40; // return the first 25 word
+        return 50; // return the first 25 word
     }
    
     function custom_excerpt_more($more){
