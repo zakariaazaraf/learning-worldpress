@@ -1,6 +1,8 @@
 <?php get_header( ); ?>
     <div class="container">
+
         <!-- START THE AUTHOR INFORMATION ROW -->
+
         <div class="row author-profile py-5 align-items-center justify-content-center">
             <div class="col-md-8 text-center text-md-left">
                 <h1 class='author-name'>
@@ -43,7 +45,7 @@
                         $author_posts->the_post();
             ?>      
                         <!-- START POSTS -->
-                        <div class="col-md-6 col-lg-4 py-sm-2 py-0">
+                        <div class="col-md-6 py-sm-2 py-0">
                             <div class="px-1 text-center">
                                 <div class="img-container">
                                     <!-- <img src="http://placehold.it/600x300/300" alt="post image"> -->
@@ -71,7 +73,11 @@
                     endwhile;
                     echo '</div>';
                     // destroy the previous query and setup a new one
-                    wp_reset_query(  );
+                    //wp_reset_query(  );
+
+                    // Restores the $post query after looping throught the loop
+                    wp_reset_postdata(  );
+                    
                 endif;
             ?>
         <!-- END THE AUTHOR INFORMATION ROW -->
@@ -91,7 +97,9 @@
                             'user_id' => $author_id,
                             'count' => true // user comments on the site
                         );
+
                         echo get_comments($comments_args);
+            
                     ?>
                 </span>
             </div>
@@ -99,5 +107,26 @@
             <div class="col-4"><span></span></div>
         </div>
         <!-- END AUTHOR STATISTICS -->
+
+        <!-- START THE AUTHOR COMMENTS -->
+        <?php
+            // See Documentation
+            $author_comments_args = array(
+                'user_id' => $author_id,
+                'status' => 'approve',
+                'number' => '',
+                'post_status' => 'publish',
+                'post_type' => 'post'
+            );
+
+            $author_comments = get_comments($author_comments_args);
+
+            foreach($author_comments as $comment){
+                echo $comment->comment_post_ID . '<br>';
+                echo $comment->comment_author . '<br>';
+                echo $comment->comment_content . '<br>';
+            }
+        ?>
+        <!-- END THE AUTHOR COMMENTS -->
     </div>    
 <?php get_footer( ); ?>

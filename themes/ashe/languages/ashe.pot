@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Ashe\n"
-"POT-Creation-Date: 2021-04-19 13:23+0400\n"
+"POT-Creation-Date: 2021-05-12 21:09+0400\n"
 "PO-Revision-Date: 2018-06-23 17:29+0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -170,7 +170,7 @@ msgstr ""
 #: inc/about/about-ashe.php:27
 #, php-format
 msgid ""
-"%s theme is one of the most Popular Free WordPress theme of 2017-2021 years. "
+"%s theme is one of the most Popular Free WordPress theme of 2020-2021 years. "
 "To understand better what the theme can offer, please click the button below."
 msgstr ""
 
@@ -549,8 +549,8 @@ msgstr ""
 
 #: inc/customizer/customizer-repeater/class/customizer-repeater-control.php:265
 #: inc/customizer/customizer-repeater/class/customizer-repeater-control.php:381
-#: inc/customizer/customizer.php:862 inc/customizer/customizer.php:871
-#: inc/customizer/customizer.php:880
+#: inc/customizer/customizer.php:865 inc/customizer/customizer.php:874
+#: inc/customizer/customizer.php:883
 msgid "Title"
 msgstr ""
 
@@ -617,13 +617,13 @@ msgid "Icon"
 msgstr ""
 
 #: inc/customizer/customizer-repeater/class/customizer-repeater-control.php:523
-#: inc/customizer/customizer.php:868 inc/customizer/customizer.php:877
-#: inc/customizer/customizer.php:886
+#: inc/customizer/customizer.php:871 inc/customizer/customizer.php:880
+#: inc/customizer/customizer.php:889
 msgid "Image"
 msgstr ""
 
 #: inc/customizer/customizer-repeater/class/customizer-repeater-control.php:524
-#: inc/customizer/customizer.php:915 inc/customizer/customizer.php:968
+#: inc/customizer/customizer.php:918 inc/customizer/customizer.php:971
 msgid "None"
 msgstr ""
 
@@ -678,7 +678,7 @@ msgstr ""
 msgid "Skins"
 msgstr ""
 
-#: inc/customizer/customizer.php:413 inc/customizer/customizer.php:924
+#: inc/customizer/customizer.php:413 inc/customizer/customizer.php:927
 msgid "Default"
 msgstr ""
 
@@ -740,7 +740,7 @@ msgstr ""
 msgid "List Style"
 msgstr ""
 
-#: inc/customizer/customizer.php:559 inc/customizer/customizer.php:909
+#: inc/customizer/customizer.php:559 inc/customizer/customizer.php:912
 msgid "Blog Page"
 msgstr ""
 
@@ -860,15 +860,15 @@ msgstr ""
 msgid "Featured Slider"
 msgstr ""
 
-#: inc/customizer/customizer.php:734 inc/customizer/customizer.php:853
+#: inc/customizer/customizer.php:734 inc/customizer/customizer.php:856
 msgid "Front Page"
 msgstr ""
 
-#: inc/customizer/customizer.php:735 inc/customizer/customizer.php:854
+#: inc/customizer/customizer.php:735 inc/customizer/customizer.php:857
 msgid "Posts Page"
 msgstr ""
 
-#: inc/customizer/customizer.php:736 inc/customizer/customizer.php:855
+#: inc/customizer/customizer.php:736 inc/customizer/customizer.php:858
 msgid "Front and Posts Pages"
 msgstr ""
 
@@ -906,226 +906,230 @@ msgid "Number of Slides"
 msgstr ""
 
 #: inc/customizer/customizer.php:817
-msgid "Show Navigation Arrows"
+msgid "Exclude Slides without Images"
 msgstr ""
 
 #: inc/customizer/customizer.php:820
+msgid "Show Navigation Arrows"
+msgstr ""
+
+#: inc/customizer/customizer.php:823
 msgid "Show Pagination Dots"
 msgstr ""
 
-#: inc/customizer/customizer.php:830
+#: inc/customizer/customizer.php:833
 msgid "Slider Options "
 msgstr ""
 
-#: inc/customizer/customizer.php:844 inc/customizer/customizer.php:850
+#: inc/customizer/customizer.php:847 inc/customizer/customizer.php:853
 msgid "Featured Links"
 msgstr ""
 
-#: inc/customizer/customizer.php:859
+#: inc/customizer/customizer.php:862
 msgid "Display Featured Links on"
 msgstr ""
 
-#: inc/customizer/customizer.php:865 inc/customizer/customizer.php:874
-#: inc/customizer/customizer.php:883 inc/customizer/customizer.php:1111
-#: inc/customizer/customizer.php:1117 inc/customizer/customizer.php:1123
-#: inc/customizer/customizer.php:1129
+#: inc/customizer/customizer.php:868 inc/customizer/customizer.php:877
+#: inc/customizer/customizer.php:886 inc/customizer/customizer.php:1115
+#: inc/customizer/customizer.php:1121 inc/customizer/customizer.php:1127
+#: inc/customizer/customizer.php:1133
 msgid "URL"
 msgstr ""
 
-#: inc/customizer/customizer.php:896
+#: inc/customizer/customizer.php:899
 msgid "Feat. Links Options "
 msgstr ""
 
-#: inc/customizer/customizer.php:916
+#: inc/customizer/customizer.php:919
 msgid "Post Excerpt"
 msgstr ""
 
-#: inc/customizer/customizer.php:917
+#: inc/customizer/customizer.php:920
 msgid "Post Content"
 msgstr ""
 
-#: inc/customizer/customizer.php:921
+#: inc/customizer/customizer.php:924
 msgid "Post Description"
 msgstr ""
 
-#: inc/customizer/customizer.php:925
+#: inc/customizer/customizer.php:928
 msgid "Numeric"
 msgstr ""
 
-#: inc/customizer/customizer.php:929
+#: inc/customizer/customizer.php:932
 msgid "Post Pagination"
 msgstr ""
 
-#: inc/customizer/customizer.php:932
+#: inc/customizer/customizer.php:935
 msgid "Show Drop Caps (First Big Letter)"
 msgstr ""
 
-#: inc/customizer/customizer.php:935 inc/customizer/customizer.php:1007
+#: inc/customizer/customizer.php:938 inc/customizer/customizer.php:1010
 msgid "Show Categories"
 msgstr ""
 
-#: inc/customizer/customizer.php:938 inc/customizer/customizer.php:1010
+#: inc/customizer/customizer.php:941 inc/customizer/customizer.php:1013
 msgid "Show Date"
 msgstr ""
 
-#: inc/customizer/customizer.php:941 inc/customizer/customizer.php:1013
+#: inc/customizer/customizer.php:944 inc/customizer/customizer.php:1016
 msgid "Show Comments"
 msgstr ""
 
-#: inc/customizer/customizer.php:944 inc/customizer/customizer.php:1016
+#: inc/customizer/customizer.php:947 inc/customizer/customizer.php:1019
 msgid "Show Author"
 msgstr ""
 
-#: inc/customizer/customizer.php:947
+#: inc/customizer/customizer.php:950
 msgid "Show Facebook"
 msgstr ""
 
-#: inc/customizer/customizer.php:950
+#: inc/customizer/customizer.php:953
 msgid "Show Twitter"
 msgstr ""
 
-#: inc/customizer/customizer.php:953
+#: inc/customizer/customizer.php:956
 msgid "Show Pinterest"
 msgstr ""
 
-#: inc/customizer/customizer.php:956
+#: inc/customizer/customizer.php:959
 msgid "Show Google Plus"
 msgstr ""
 
-#: inc/customizer/customizer.php:959
+#: inc/customizer/customizer.php:962
 msgid "Show Linkedin"
 msgstr ""
 
-#: inc/customizer/customizer.php:962
+#: inc/customizer/customizer.php:965
 msgid "Show Reddit"
 msgstr ""
 
-#: inc/customizer/customizer.php:965
+#: inc/customizer/customizer.php:968
 msgid "Show Tumblr"
 msgstr ""
 
-#: inc/customizer/customizer.php:969
+#: inc/customizer/customizer.php:972
 msgid "Related"
 msgstr ""
 
-#: inc/customizer/customizer.php:973 inc/customizer/customizer.php:1022
+#: inc/customizer/customizer.php:976 inc/customizer/customizer.php:1025
 msgid "Related Posts - Display"
 msgstr ""
 
-#: inc/customizer/customizer.php:983
+#: inc/customizer/customizer.php:986
 msgid "Blog Options "
 msgstr ""
 
-#: inc/customizer/customizer.php:998
+#: inc/customizer/customizer.php:1001
 msgid "Single Post"
 msgstr ""
 
-#: inc/customizer/customizer.php:1004
+#: inc/customizer/customizer.php:1007
 msgid "Show Featured Image"
 msgstr ""
 
-#: inc/customizer/customizer.php:1019
+#: inc/customizer/customizer.php:1022
 msgid "Show Author Description"
 msgstr ""
 
-#: inc/customizer/customizer.php:1031
+#: inc/customizer/customizer.php:1034
 msgid "Social Media"
 msgstr ""
 
-#: inc/customizer/customizer.php:1037
+#: inc/customizer/customizer.php:1040
 msgid "Open Social Links in New Window"
 msgstr ""
 
-#: inc/customizer/customizer.php:1108 inc/customizer/customizer.php:1114
-#: inc/customizer/customizer.php:1120 inc/customizer/customizer.php:1126
+#: inc/customizer/customizer.php:1112 inc/customizer/customizer.php:1118
+#: inc/customizer/customizer.php:1124 inc/customizer/customizer.php:1130
 msgid "Select Icon"
 msgstr ""
 
-#: inc/customizer/customizer.php:1137
+#: inc/customizer/customizer.php:1141
 msgid "Typography"
 msgstr ""
 
-#: inc/customizer/customizer.php:1143
+#: inc/customizer/customizer.php:1147
 msgid "Open Sans"
 msgstr ""
 
-#: inc/customizer/customizer.php:1144
+#: inc/customizer/customizer.php:1148
 msgid "Rokkitt"
 msgstr ""
 
-#: inc/customizer/customizer.php:1145
+#: inc/customizer/customizer.php:1149
 msgid "Kalam"
 msgstr ""
 
-#: inc/customizer/customizer.php:1149 inc/customizer/customizer.php:1152
+#: inc/customizer/customizer.php:1153 inc/customizer/customizer.php:1156
 msgid "Font Family"
 msgstr ""
 
-#: inc/customizer/customizer.php:1155
+#: inc/customizer/customizer.php:1159
 msgid "Italic"
 msgstr ""
 
-#: inc/customizer/customizer.php:1158
+#: inc/customizer/customizer.php:1162
 msgid "Uppercase"
 msgstr ""
 
-#: inc/customizer/customizer.php:1169
+#: inc/customizer/customizer.php:1173
 msgid "Typography Options"
 msgstr ""
 
-#: inc/customizer/customizer.php:1184
+#: inc/customizer/customizer.php:1188
 msgid "Page Footer"
 msgstr ""
 
-#: inc/customizer/customizer.php:1192
+#: inc/customizer/customizer.php:1196
 msgid "Your Copyright Text"
 msgstr ""
 
-#: inc/customizer/customizer.php:1195
+#: inc/customizer/customizer.php:1199
 msgid "Show Scroll-Top Button"
 msgstr ""
 
-#: inc/customizer/customizer.php:1205
+#: inc/customizer/customizer.php:1209
 msgid "Footer Options"
 msgstr ""
 
-#: inc/customizer/customizer.php:1219
+#: inc/customizer/customizer.php:1223
 msgid "Preloader"
 msgstr ""
 
-#: inc/customizer/customizer.php:1225
+#: inc/customizer/customizer.php:1229
 msgid "Preloading Animation"
 msgstr ""
 
-#: inc/customizer/customizer.php:1234
+#: inc/customizer/customizer.php:1238
 msgid "Responsive"
 msgstr ""
 
-#: inc/customizer/customizer.php:1235
+#: inc/customizer/customizer.php:1239
 msgid "These options will only apply to Mobile devices."
 msgstr ""
 
-#: inc/customizer/customizer.php:1242
+#: inc/customizer/customizer.php:1246
 msgid "Merge Top and Main Menus"
 msgstr ""
 
-#: inc/customizer/customizer.php:1245
+#: inc/customizer/customizer.php:1249
 msgid "Show Featured Slider"
 msgstr ""
 
-#: inc/customizer/customizer.php:1248
+#: inc/customizer/customizer.php:1252
 msgid "Show Featured Links"
 msgstr ""
 
-#: inc/customizer/customizer.php:1251
+#: inc/customizer/customizer.php:1255
 msgid "Show Related Posts"
 msgstr ""
 
-#: inc/customizer/customizer.php:1260
+#: inc/customizer/customizer.php:1264
 msgid "Select Mobile Menu Icon"
 msgstr ""
 
-#: inc/customizer/customizer.php:1263
+#: inc/customizer/customizer.php:1267
 msgid "Menu Button Text"
 msgstr ""
 
@@ -1584,7 +1588,7 @@ msgid "Comments"
 msgstr ""
 
 #: templates/grid/blog-grid.php:89 templates/grid/blog-list.php:93
-#: templates/header/featured-slider.php:102
+#: templates/header/featured-slider.php:99
 msgid "read more"
 msgstr ""
 

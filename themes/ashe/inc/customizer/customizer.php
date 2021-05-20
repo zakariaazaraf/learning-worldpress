@@ -813,6 +813,9 @@ function ashe_customize_register( $wp_customize ) {
 	// Amount
 	ashe_number_absint_control( 'featured_slider', 'amount', esc_html__( 'Number of Slides', 'ashe' ), array( 'step' => '1', 'max' => '5' ), 'refresh', 10 );
 
+	// Exclude Images
+	ashe_checkbox_control( 'featured_slider', 'exc_images', esc_html__( 'Exclude Slides without Images', 'ashe' ), 'refresh', 20 );
+
 	// Navigation
 	ashe_checkbox_control( 'featured_slider', 'navigation', esc_html__( 'Show Navigation Arrows', 'ashe' ), 'refresh', 25 );
 
@@ -1098,6 +1101,7 @@ function ashe_customize_register( $wp_customize ) {
 		'snapchat-ghost' 		=> 'Snapchat 2',
 		'snapchat-square'		=> 'Snapchat 3',
 		'spotify'				=> 'Spotify',
+		'deviantart'			=> 'DeviantArt',
 		'shopping-cart'			=> 'Cart',
 		'meetup' 				=> 'Meetup',
 		'cc-paypal' 			=> 'PayPal',

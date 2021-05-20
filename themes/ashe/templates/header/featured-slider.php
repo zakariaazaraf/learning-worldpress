@@ -28,6 +28,8 @@ $slider_data .= '}';
 	
 	<?php
 
+	$meta_query = (true == ashe_options( 'featured_slider_exc_images' )) ? [ [ 'key' => '_thumbnail_id', 'compare' 	=> 'EXISTS' ] ] : [];
+
 	// Query Args
 	$args = array(
 		'post_type'		      	=> array( 'post' ),
@@ -35,12 +37,7 @@ $slider_data .= '}';
 		'order'			      	=> 'DESC',
 		'posts_per_page'      	=> ashe_options( 'featured_slider_amount' ),
 		'ignore_sticky_posts'	=> 1,
-		'meta_query' 			=> array( 
-			array(
-				'key' 		=> '_thumbnail_id',
-				'compare' 	=> 'EXISTS'
-			)
-		),	
+		'meta_query' 			=> $meta_query,	
 	);
 
 	if ( ashe_options( 'featured_slider_display' ) === 'category' ) {
