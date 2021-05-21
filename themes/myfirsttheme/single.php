@@ -2,6 +2,7 @@
     
         <section class="single-post mt-4">
             <div class="container">
+
                 <div class="post">
                     <?php   
                         if(have_posts(  )):
@@ -97,6 +98,7 @@
                         endif;
                     ?>
                 </div>
+
                 <?php
                     // PAGNATION LINKS
                     echo '<div class="d-flex justify-content-between">';
@@ -139,7 +141,51 @@
                     /* comment_form( $comment_form_args ); */
 
                 ?>
+
+                <!-- START RECOMMENED POSTS -->
+                <div class="recommended-posts">
+                    <h2>recommended Posts</h2>
+                    <div class="row">
+
+                        <?php
+
+                            // Get The Post Id
+                            $post_id = get_queried_object_id(  ); // Get the id of the currently queried object
+
+                            $recommended_posts_args = array(
+                                'posts_per_page' => 5,
+                                'orderby' => 'rand',
+                                'category__in' /* Take Aray */ => wp_get_post_categories( $post_id ), /* Retrun Array */
+                                'post__not_in' => array($post_id) // Exclude the current 'POST'
+                            );
+
+                            $recommended_posts = new WP_Query($recommended_posts_args);
+
+                            if( $recommended_posts->have_posts( ) ){
+
+                                while( $recommended_posts->have_posts( ) ){
+
+                                    $recommended_posts->the_post(  );
+
+                                    ?>
+                                        <div class="recommended-post col-12 col-md-4">
+                                            <div class="post-title">
+                                                <a href="<?php echo get_permalink( ); ?>">
+                                                    <?php echo the_title(  ); ?>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    <?php
+                                }
+
+                            }
+                        ?>
+                    </div>
+
+                </div>
+                <!-- END RECOMMENED POSTS -->
             </div>
+            
         </section>
 
 <?php get_footer() ?>
