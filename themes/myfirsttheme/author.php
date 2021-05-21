@@ -122,9 +122,30 @@
             $author_comments = get_comments($author_comments_args);
 
             foreach($author_comments as $comment){
-                echo $comment->comment_post_ID . '<br>';
-                echo $comment->comment_author . '<br>';
-                echo $comment->comment_content . '<br>';
+                //echo $comment->comment_post_ID . '<br>';
+                //echo $comment->comment_author . '<br>';
+                
+                ?>
+                    <div class="author_comment my-2">
+                        <div class='comment_title'>
+                            <a href="<?php echo get_permalink( $comment->comment_post_ID ); ?>">
+                                <?php echo get_the_title( $comment->comment_post_ID ); ?>
+                            </a>
+                        </div>
+
+                        <div class='comment_content'>
+                            <?php echo $comment->comment_content ; ?>
+                        </div>
+
+                        <span class="comment_date">
+                            <i class='fa fa-calendar mr-2'></i>
+                            <?php //echo $comment->comment_date; ?>
+                            <?php echo mysql2date( 'l F j Y', $comment->comment_date );  ?>
+                        </span>
+                    </div>
+                <?php
+                
+                
             }
         ?>
         <!-- END THE AUTHOR COMMENTS -->
