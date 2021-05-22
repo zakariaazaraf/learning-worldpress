@@ -61,9 +61,11 @@
                     ?>
                     
                 </div>
+                
                 <?php
+                
                     // PAGNATION LINKS
-                    echo '<div class="d-flex justify-content-between">';
+                    /* echo '<div class="d-flex justify-content-between">';
                         if(get_previous_posts_link(  )){
                             previous_posts_link("<< Prev");
                             
@@ -77,8 +79,12 @@
                         }else{
                             echo '  ';
                         }
-                    echo '</div>';
+                    echo '</div>'; */
                 ?>
+                
+                <div class="custom-pagination d-flex justify-content-end">    
+                    <h3><?php echo numbering_pages(); ?></h3>
+                </div>
             </div>
         </section>
 

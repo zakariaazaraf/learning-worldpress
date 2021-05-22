@@ -113,4 +113,36 @@
     add_filter( 'excerpt_length', 'custom_excerpt_length' );
 
     add_filter( 'excerpt_more', 'custom_excerpt_more' );
+
+
+    /**
+     *  Numbering pages 
+     * 
+     */
+
+     function numbering_pages(){
+
+        global $wp_query; // Object from the WP_QUERY Class, And make it global
+
+        $all_posts_pages = $wp_query->max_num_pages; // Property return the number of the post pages
+
+        $current_page = max(1, get_query_var( 'paged' ) ); // Get the current Page
+
+        if($all_posts_pages > 1){
+
+            $pagniate_links_args = array(
+                'base' => get_pagenum_link(  ) . '%_%',  // Retrive a link for a page number
+                'format' => 'page/%#%/', // Wordpres Pages Format
+                'current' => $current_page,
+                'mid_size' => 2,
+                'end_size' => 2
+                /* 'total' => $all_posts_pages, */ // By Default It Has The Total
+            );
+
+            return paginate_links( $pagniate_links_args );
+        }
+
+        return false;
+
+     }
      

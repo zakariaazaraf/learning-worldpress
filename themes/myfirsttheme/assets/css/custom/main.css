@@ -109,3 +109,26 @@ header .navbar {
   font-size: 5rem;
   font-weight: bold;
 }
+
+/* Start Custom Pagination */
+.custom-pagination .page-numbers {
+  padding: 8px 15px;
+  background-color: #bbb;
+  color: #000;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.25s ease;
+}
+
+.custom-pagination .page-numbers:hover {
+  background-color: rgb(56, 133, 250);
+  color: #fff;
+}
+
+.custom-pagination .current {
+  background-color: rgb(56, 133, 250);
+  color: #fff;
+}
+/* End Custom Pagination */
