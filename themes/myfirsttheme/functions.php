@@ -101,10 +101,20 @@
         if(is_author(  )){
             return 20;
         }
+
+        if( is_category(  ) ){ // If The Page Is Category
+            return 25;
+        }
+
         return 50; // return the first 25 word
     }
    
     function custom_excerpt_more($more){
+
+        if( is_category(  ) ){ // If The Page Is Category
+            return ' Read More...';
+        }
+
         return ' ...';
         
     }
