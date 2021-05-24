@@ -1,5 +1,9 @@
-    <?php get_header(); ?>
-    
+    <?php 
+        get_header(); 
+        // Call The Breadcrumb 
+        include get_template_directory(  ) . '/includes/breadcrumb.php';
+    ?>
+        
         <section class="single-post mt-4">
             <div class="container">
 
