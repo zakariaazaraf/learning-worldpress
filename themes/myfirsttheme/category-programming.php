@@ -3,9 +3,7 @@
         <section class="posts mt-4">
             <div class="container">
                 <div class="row justify-content-center">
-                    <h1 class='display-3 text-capitalize text-center col-12'>
-                        Programming Category slug
-                    </h1>
+                    <h1 class='display-3 text-capitalize text-center col-12'>Programming Category slug</h1>
                     <?php 
 
                         if( have_posts() ){
@@ -48,6 +46,14 @@
                                         </p>
                                         
                                     </div> 
+                                    <div class="sidebar col-sm-4 my-2 d-block">
+                                        <?php
+                                            // ADD THE SIDEBAR USING WIDGETS
+                                            if( is_registered_sidebar( 'main-sidebar' )){
+                                                dynamic_sidebar( 'main-sidebar' );
+                                            }
+                                        ?>
+                                    </div>
                                 <?php
 
                             }

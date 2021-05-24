@@ -1,4 +1,4 @@
-<?php
+hd<?php
 
     // ADD FEATURE IMAGE SUPPORT
     add_theme_support( 'post-thumbnails');
@@ -156,3 +156,26 @@
 
      }
      
+
+     /**
+      * Register Sidebar feature
+      */ 
+    function zakaria_main_sidebar(){
+
+        // Sidebar AArgummennts
+        $sidebar_args = array(
+            'name' => 'main sidebar',
+            'id' => 'main-sidebar',
+            'description' => 'this is the sidebar description, describe the content and the functionalties',
+            'class' => 'main-sidebar ',
+            'before_widget' => '<div class="widget-content">', // takes an HTML content
+            'after_widget' => '</div>',
+            'before_title' => '<h3 class="widget-title">', // Takes HTMH content, Describe the Widget Title
+            'after_title' => '</h3>'
+        );
+
+        register_sidebar( $sidebar_args ); // busild the deffination of the sidebar and return the sidebar ID
+    }
+
+    // ADD ACTION FOR WIDGETS
+    add_action( 'widgets_init', 'zakaria_main_sidebar' );
