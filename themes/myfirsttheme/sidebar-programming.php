@@ -66,12 +66,26 @@
     print_r($all_comments);
     echo '</pre>'; */
 
-    // Get The Category's Posts
+    // Get The Category's Posts 
+    $categoryPostCount = get_queried_object(  )->count;
     /* echo '<pre>';
     print_r(get_queried_object(  ));
     echo '</pre>'; */
 
-    $categoryPostCount = get_queried_object(  )->count;
+    /* Get The Latest Category's Posts */
+
+    $posts_args = array(
+        'posts_per_page' => 5,
+        'cat' => 4// Get Category Id From The Admin DashBoard
+    );
+
+    $query = new WP_Query( $posts_args );
+
+    /* echo '<pre>';
+    print_r($query);
+    echo '</pre>'; */
+
+    
 
 ?>
 
@@ -95,11 +109,52 @@
         </div>
     </div>
     <div class="widget">
-        <h5 class="widget-title">Widget Title</h5>
-        <div class="widget-content">Widget Content</div>
+        <h5 class="widget-title">Latest Politics</h5>
+        <div class="widget-content">
+            <ul class='list-unstyled'>
+                <?php
+
+                    if($query->have_posts()){
+                        while($query->have_posts()){
+                            $query->the_post();
+                            ?>
+                                <li>
+                                    <a href="<?php echo the_permalink();?>" target='_blank'><?php the_title(  ); ?></a>
+                                </li>
+                            <?php
+                        }
+                    }
+
+                    wp_reset_postdata(  );
+                ?>
+            </ul>
+        </div>
     </div>
     <div class="widget">
-        <h5 class="widget-title">Widget Title</h5>
-        <div class="widget-content">Widget Content</div>
+        <h5 class="widget-title">Traend Post</h5>
+        <div class="widget-content">
+            <ul class="list-unstyled">
+                <?php
+                    // Get The Tranding Post Depanding On Comment Count
+                    $trand_post_args = array(
+                        'posts_per_page' => 1, // The Only Trand
+                        'orderby' => 'comment_count'
+                    );
+
+                    $trandQuery = new WP_Query( $trand_post_args );
+
+                    if( $trandQuery->have_posts() ){
+                        while( $trandQuery->have_posts() ){
+                            $trandQuery->the_post();
+                            ?>
+                                <li>
+                                    <a href="<?php echo the_permalink(); ?>" target='_blank'><?php the_title(); ?></a>
+                                </li>
+                            <?php
+                        }
+                    }
+                ?>
+            </ul>
+        </div>
     </div>
 </div>
