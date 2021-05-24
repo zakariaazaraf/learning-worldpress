@@ -179,3 +179,16 @@ hd<?php
 
     // ADD ACTION FOR WIDGETS
     add_action( 'widgets_init', 'zakaria_main_sidebar' );
+
+
+    // Override wpautop filter
+
+    function override_wpautop_filter( $content ){
+        
+        remove_filter( 'the_content', 'wpautop' );
+
+        return $content;
+    }
+
+    add_filter( 'the_content' , 'override_wpautop_filter', 0); // Specify the Priority
+    
