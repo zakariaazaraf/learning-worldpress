@@ -49,9 +49,14 @@
                                     <div class="sidebar col-sm-4 my-2 d-block">
                                         <?php
                                             // ADD THE SIDEBAR USING WIDGETS
-                                            if( is_registered_sidebar( 'main-sidebar' )){
+                                            /* if( is_registered_sidebar( 'main-sidebar' )){
                                                 dynamic_sidebar( 'main-sidebar' );
-                                            }
+                                            } */
+                                            // Load sidebar Custom Template, Check "sidebar.php" File
+                                            //get_sidebar(  );
+
+                                            // Load sidebar Custom Template For Programming Category, Check "sidebar-*********.php" File
+                                            get_sidebar( 'programming' );
                                         ?>
                                     </div>
                                 <?php

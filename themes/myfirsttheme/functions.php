@@ -170,8 +170,8 @@ hd<?php
             'class' => 'main-sidebar ',
             'before_widget' => '<div class="widget-content">', // takes an HTML content
             'after_widget' => '</div>',
-            'before_title' => '<h3 class="widget-title">', // Takes HTMH content, Describe the Widget Title
-            'after_title' => '</h3>'
+            'before_title' => '<h4 class="widget-title">', // Takes HTMH content, Describe the Widget Title
+            'after_title' => '</h4>'
         );
 
         register_sidebar( $sidebar_args ); // busild the deffination of the sidebar and return the sidebar ID

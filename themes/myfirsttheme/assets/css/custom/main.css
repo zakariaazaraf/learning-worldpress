@@ -132,3 +132,23 @@ header .navbar {
   color: #fff;
 }
 /* End Custom Pagination */
+
+/* Start Sidebar | Programming Sidebar */
+.sidebar-programming .widget {
+  margin: 7px 0;
+}
+
+.sidebar-programming .widget > * {
+  padding: 7px 10px;
+}
+
+.sidebar-programming .widget .widget-title {
+  background-color: rgb(67, 205, 247);
+  color: #fff;
+  margin: 0;
+}
+
+.sidebar-programming .widget .widget-content {
+  background-color: #ddd;
+}
+/* End Sidebar | Programming Sidebar */
